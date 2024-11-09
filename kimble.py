@@ -9,7 +9,7 @@ maalialue=4
 def heita_noppaa():
     return random.randint(1,6)
 
-def siirraa_nappulaa(pelaaja, nappula_indeksi, askelia):
+def siirra_nappulaa(pelaaja, nappula_indeksi, askelia):
     sijainti=pelaaja["nappulat"][nappula_indeksi]
     if sijainti==0 and askelia==6:
         pelaaja["nappulat"][nappula_indeksi]=1
@@ -49,7 +49,7 @@ def pelaa_vuoro():
     print(f'Noppa heitti tuloksen {nopan_tulos}')
     for i in range(len(pelaaja["nappulat"])):
         if pelaaja["nappulat"][i]!="maalissa":
-            siirraa_nappulaa(pelaaja, i, nopan_tulos)
+            siirra_nappulaa(pelaaja, i, nopan_tulos)
             break
     vuoro=(vuoro+1)%len(pelaajat)
 
